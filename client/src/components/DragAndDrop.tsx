@@ -3,6 +3,7 @@ import DraggableObject from './DraggableObject';
 import { useDrop } from 'react-dnd';
 import { Iinput } from '../interfaces/event.interface';
 import InputFieldOnDrop from './InputFieldOnDrop';
+import '../App.css';
 
 
 const DragAndDrop = () => {

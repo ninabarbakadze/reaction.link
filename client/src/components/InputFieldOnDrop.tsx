@@ -1,5 +1,6 @@
 import React, {Dispatch, SetStateAction, FormEvent} from 'react';
 import { Iinput } from '../interfaces/event.interface';
+import SavedEvents from './SavedEvents';
 
 interface iProps {
   setInputField: Dispatch<SetStateAction<Iinput[]>>
@@ -16,19 +17,22 @@ const InputFieldOnDrop = ({inputFields, setInputField}: iProps) => {
 
 
   return (
-    <form > 
-      { inputFields.map((InputField, index) => (
-        <div key={index}>
-          <input 
-            type="text" 
-            placeholder="event"
-            value={InputField.event} 
-            onChange={(event) => handleChange(index, event) }
-          />
-        </div>
-      )) }
-      <button type="submit">save</button>
-    </form>
+    <>
+      <SavedEvents />
+      <form > 
+        { inputFields.map((InputField, index) => (
+          <div key={index}>
+            <input 
+              type="text" 
+              placeholder="event"
+              value={InputField.event} 
+              onChange={(event) => handleChange(index, event) }
+            />
+          </div>
+        )) }
+        <button type="submit">save</button>
+      </form>
+    </>
   );
 };
 
