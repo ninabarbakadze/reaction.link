@@ -1,5 +1,3 @@
-# reaction.link
-
 ## Running this project
 - Fork & clone this repo
 - Run npm i in Client and Server to install necessary dependencies
