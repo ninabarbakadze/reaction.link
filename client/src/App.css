@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+body {
+  font-family: Roboto;
+  font-size: 18px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.board {
+  width: 1000px; 
+  height: 700px;
+  margin-left: 600px;
+}
+.submit-button {
+width: 600px;
+height: 56px;
+align-items: center;
+padding: 17px 61px;
+background-color: #000;
+color: white;
+font-size: 18px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.draggable-obj-parent {
+position: fixed;
+width: 500px;
+height: 1024px;
+background: #EBEBEB;
+box-sizing: border-box;
+margin-top: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.draggable-object {
+position: absolute;
+width: 340px;
+height: 64px;
+left: 80px;
+top: 80px;
+background: #FFFFFF;
+text-align: center;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
 }
 
-.App-link {
-  color: #61dafb;
+.input-parent {
+  margin-top: 0;
+  width: 500px;
+  height: 15px;
+  background-color: #EBEBEB;
+  margin-bottom: 18px;
+  padding: 50px
+}
+ 
+.input-field {
+  font-size: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.saved-event, .input-field {
+text-align: left;
+list-style: none;
+outline: none;
+border: none;
+background-color: #EBEBEB;
 }
+
+.event-parent{
+  margin-top: 0;
+  width: 500px;
+  height: 20px;
+  background-color: #EBEBEB;
+  padding: 50px;
+};
+
+
+

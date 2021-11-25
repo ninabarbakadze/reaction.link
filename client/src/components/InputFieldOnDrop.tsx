@@ -2,6 +2,7 @@ import React, {Dispatch, SetStateAction, FormEvent} from 'react';
 import { Iinput } from '../interfaces/event.interface';
 import SavedEvents from './SavedEvents';
 import { addEvents } from '../services/event.services';
+import '../App.css';
 
 interface iProps {
   setInputField: Dispatch<SetStateAction<Iinput[]>>
@@ -18,7 +19,7 @@ const InputFieldOnDrop = ({inputFields, setInputField}: iProps) => {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    inputFields.map(async inputfield => {
+    inputFields.map(async (inputfield, index) => {
       if (inputfield.event !== '') await addEvents(inputFields);
     });
   };
@@ -27,10 +28,11 @@ const InputFieldOnDrop = ({inputFields, setInputField}: iProps) => {
   return (
     <>
       <SavedEvents />
-      <form > 
+      <form onSubmit={handleSubmit}> 
         { inputFields.map((InputField, index) => (
-          <div key={index}>
+          <div className="input-parent" key={index}>
             <input 
+              className="input-field"
               type="text" 
               placeholder="event"
               value={InputField.event} 
@@ -38,7 +40,7 @@ const InputFieldOnDrop = ({inputFields, setInputField}: iProps) => {
             />
           </div>
         )) }
-        <button type="submit">save</button>
+        <button className="submit-button" type="submit" >save</button>
       </form>
     </>
   );
