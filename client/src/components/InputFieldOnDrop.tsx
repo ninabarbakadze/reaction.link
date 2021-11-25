@@ -1,6 +1,7 @@
 import React, {Dispatch, SetStateAction, FormEvent} from 'react';
 import { Iinput } from '../interfaces/event.interface';
 import SavedEvents from './SavedEvents';
+import { addEvents } from '../services/event.services';
 
 interface iProps {
   setInputField: Dispatch<SetStateAction<Iinput[]>>
@@ -13,6 +14,13 @@ const InputFieldOnDrop = ({inputFields, setInputField}: iProps) => {
     const values = [...inputFields];
     values[index].event = event.currentTarget.value;
     setInputField(values);
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    inputFields.map(async inputfield => {
+      if (inputfield.event !== '') await addEvents(inputFields);
+    });
   };
 
 
